@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin id="cordova-smooth-crop" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0">
+    <engines>
+        <engine name="cordova" version=">=3.0.0"/>
+    </engines>
+
+
+    <name>Crop Smooth Plugin</name>
+    <description>Plugin for cropping images with aspect ratio</description>
+    <license>MIT</license>
+    <keywords>cordova,camera,photo,gallery,Image,Cropping</keywords>
+    <author>Buyung setiawan purnomo</author>
+
+    <js-module src="www/smooth.js" name="cordova-smooth-crop">
+        <clobbers target="cordova.smooth.crop" />
+    </js-module>
+
+    <!-- Android -->
+    <platform name="android">
+        <resource-file src="src/android/smooth/crop.xml" target="res/drawable/crop.xml" />
+        <framework src="src/android/smooth/build-extras.gradle" custom="true" type="gradleReference"/>
+
+        <framework src="com.theartofdev.edmodo:android-image-cropper:2.8.+" />
+        <framework src="com.android.support:appcompat-v7:27.+"/>
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Crop">
+                <param name="android-package" value="smooth.plugins.cordova.crop.Crop" />
+            </feature>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity" android:theme="@style/Base.Theme.AppCompat.Light"/>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        </config-file>
+
+        <source-file src="src/android/smooth/Crop.java" target-dir="src/smooth/plugins/cordova/crop"/>
+    </platform>
+</plugin>
