@@ -16,5 +16,10 @@
     "ratio"
   ],
   "author": "Buyung setiawan purnomo",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/buyungSP/cordova-smooth-crop.git"
+  },
+  "homepage": "https://github.com/buyungSP/cordova-smooth-crop#readme"
 }
