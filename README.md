@@ -1,23 +1,27 @@
-# Crop Smooth Plugin
-
+## Crop Smooth Plugin
+-------------------------------------------------------
 Crop Smooth Plugin is a Cordova plugin that is used to crop and resize images in Cordova applications. This plugin provides functions to open the image crop screen with configured options and get image dimensions from the given image array.
 
-# Platform Support
+## Platform Support
+-------------------------------------------------------
 - Android
 
-# Installation
+## Installation
+-------------------------------------------------------
 You can install this plugin through Cordova CLI by running the following command:
 
 ``
 cordova plugin add cordova-smooth-crop
 ``
-# Usage
+## Usage
+-------------------------------------------------------
 This plugin provides two functions, "open" and "getImageDimension". Here is an example of how to use them:
 
 ### Function "open"
-``
+-------------------------------------------------------
+```js
 cordova.smooth.crop.open({
-    url: 'file:///path/to/image.jpg', // (string): path gambar yang akan dipotong. Contoh: file:///path/to/image.jpg
+    url: 'file:///path/to/image.jpg',// (string): path gambar yang akan dipotong. Contoh: file:///path/to/image.jpg
     ratio: '1/1', // (string): rasio aspek gambar yang akan dipotong. Contoh: '1/1'
     setFixAspectRatio: true, // setFixAspectRatio (boolean): mengaktifkan atau menonaktifkan rasio aspek gambar yang tetap saat memotong gambar. Contoh: false, jika nilai true ratio akan menjadi '1/1'
     size: '300x300' // (string): ukuran gambar yang akan dipotong. Contoh: '300x300'
@@ -36,10 +40,10 @@ cordova.smooth.crop.open({
 }, function error(err) {
     console.error(err); // {code:'',message:''}
 });
-``
+```
 
 The "open" function is used to open the image crop screen with configured options. Available options are:
-
+-------------------------------------------------------
 - url (string): the path of the image to be cropped.
 - ratio (string): the aspect ratio of the image to be cropped.
 - setFixAspectRatio (boolean): enable or disable the fixed aspect ratio of the image when cropping the image.
@@ -57,16 +61,16 @@ The "open" function is used to open the image crop screen with configured option
 
 
 ### Function "getImageDimension"
-
-``
+-------------------------------------------------------
+```js
 cordova.smooth.crop.getImageDimension(['file:///path/to/image1.jpg', 'file:///path/to/image2.jpg'], function success(result) {
     console.log(result); // {width:'',height:'',imgPath:'',base64:''}
 }, function error(err) {
     console.error(err); // {code:'',message:''}
 });
-``
+```
 
 The "getImageDimension" function is used to get image dimensions from the given image array. You must provide an array of image paths as the first argument.
 
-# Conclusion
+## Conclusion
 Crop Smooth Plugin can help simplify the use of image cropping functions in Cordova applications running on the Android platform.
