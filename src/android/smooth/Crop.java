@@ -108,7 +108,7 @@ public class Crop extends CordovaPlugin {
         borderCornerColor = Color.parseColor("#FF0000");
         guidelinesColor = Color.argb(175, 0, 0,0);
         backgroundColor = Color.argb(175, 0, 0,0);
-        activityMenuIconColor = Color.parseColor(Color.BLACK);
+        activityMenuIconColor = Color.rgb(0, 0,0);
         Resources activityRes = cordova.getActivity().getResources();
         String packageName = cordova.getActivity().getPackageName();
         int cropIconId = activityRes.getIdentifier("crop", "drawable", packageName);
